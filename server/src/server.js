@@ -1,7 +1,7 @@
 import express from "express"
 import connectDB from "./db/dbconfig.js"
 import dotenv from "dotenv"
-import user from "./routes/users.routes.js"
+import user from "./routes/user.routes.js"
 
 dotenv.config({path: "../env"})
 // connectDB()
