@@ -1,4 +1,4 @@
-import express, { application, urlencoded } from "express"
+import express, { urlencoded } from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import connectDB from "./db/dbconfig.js"
@@ -16,9 +16,7 @@ app.use("/", user)
 
 
 dotenv.config({path: "../env"})
-connectDB()
-
-
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`)
-})
+connectDB().then(
+	app.listen(port, () => {
+	console.log(`Example app listening on port https://localhost:${port}`)
+}))
