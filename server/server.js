@@ -1,9 +1,9 @@
 import express, { urlencoded } from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-import connectDB from "./db/dbconfig.js"
+import connectDB from "./src/db/dbconfig.js"
 import dotenv from "dotenv"
-import user from "./routes/user.routes.js"
+import user from "./src/routes/user.routes.js"
 
 const app = express()
 const port = process.env.PORT || 3000

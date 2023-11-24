@@ -1,47 +1,47 @@
-import mongoose from "mongoose"
+import mongoose, {Schema} from "mongoose";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
-const videoSchema = new mongoose.Schema(
-	{
-		firstname: {
-			type: String,
-			required: true,
-			minlength: 2,
-			unique: true,
-			lowercase: true,
-		},
-		lastname: {
-			type: String,
-			required: true,
-			unique: true,
-			lowercase: true,
-		},
-		email: {
-			type: String,
-			required: true,
-			unique: true,
-		},
-		password: {
-			type: String,
-			required: true,
-			validate: {
-				validator: (value) => {
-					return [
-						/[$@$!%*?&]/.test(password),
-						/[A-Z]/.test(password),
-						/[a-z]/.test(password),
-						/[0-9]/.test(password),
-					].every((check) => check)
-				},
-				message:
-					"Password must contain letters, spaces & special characters",
-			},
-			minlength: 8,
-			trim: true,
-			unique: true,
-		},
-	},
-	{timestamps: true}
+const videoSchema = new Schema(
+    {
+        videoFile: {
+            type: String, //cloudinary url
+            required: true
+        },
+        thumbnail: {
+            type: String, //cloudinary url
+            required: true
+        },
+        title: {
+            type: String, 
+            required: true
+        },
+        description: {
+            type: String, 
+            required: true
+        },
+        duration: {
+            type: Number, 
+            required: true
+        },
+        views: {
+            type: Number,
+            default: 0
+        },
+        isPublished: {
+            type: Boolean,
+            default: true
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        }
+
+    }, 
+    {
+        timestamps: true
+    }
 )
-const Video = mongoose.model("User", videoSchema)
 
-export default Video
+videoSchema.plugin(mongooseAggregatePaginate)
+
+export const Video = mongoose.model("Video", videoSchema)
