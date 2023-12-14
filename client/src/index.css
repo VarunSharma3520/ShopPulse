@@ -1,4 +1,6 @@
 body {
+  background-color: black;
+  color: white;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +12,36 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.login{
+  text-align: center;
+  margin-top: 10rem;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.5; /* Firefox */
+}
+input::-ms-reveal,
+input::-ms-clear
+{
+  filter: invert(100%);
+}
+input{
+  color: rgb(255, 255, 255);
+  caret-color: rgb(255, 255, 255);
+  outline: none;
+  background: none;
+  border-style: none;
+  background-color: rgb(29, 29, 29);
+}
+
+#submit{
+  background-color: rgb(1, 101, 225);
+  color: white;
+  padding: 5px;
+  margin: 6px;
+  border-style: none;
+  border-radius: 5px;
 }

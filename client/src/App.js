@@ -1,12 +1,11 @@
-import './App.css';
-
-function App() {
+import React from 'react'
+import Login from "./component/Login.jsx";
+const App = () => {
   return (
-    <div className="App">
-      <h1>Learn React</h1>
-      <p>how</p>
+    <div>
+      <Login/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
