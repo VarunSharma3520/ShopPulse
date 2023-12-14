@@ -7,9 +7,6 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", (req, res, next) => {
-    console.log(`${JSON.stringify(req.body)}`)
-    const { Authorization } = JSON.stringify(req.headers)
-    console.log(JSON.stringify(Authorization))
     next()
 },LoginController)
 

@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./db/dbconfig.js";
-import userRouter from './routes/user.routes.js';
+// import userRouter from './routes/user.routes.js';
 import loginRouter from './routes/login.routes.js';
 
 dotenv.config();
@@ -23,7 +23,7 @@ app.use(express.static("public"));
 app.use(cookieParser());
 app.disable('x-powered-by');
 
-app.use("/api/v1/users", userRouter);
+// app.use("/api/v1/users", userRouter);
 app.use("/api/v1/login", loginRouter);
 
 connectDB()
