@@ -3,7 +3,7 @@ import axios from'axios';
 
 
 const Login = () => {
-    const Token = 'svsdv'
+    const Token = 'bro'
     const [disable,isdisable] = useState(false);
     const handleSubmit = (e) => {
         isdisable(true)
@@ -12,8 +12,7 @@ const Login = () => {
         const formJson = Object.fromEntries(formData.entries());
         axios.post('https://5000-varunsharma35-shoppulse-ggj7p2nmaep.ws-us106.gitpod.io/api/v1/login', {
             username: formJson.username,
-            password: formJson.password,
-            Authorization: `Bearer ${Token}`
+            password: formJson.password
         })
         .then(function (response) {
             console.log(response)
