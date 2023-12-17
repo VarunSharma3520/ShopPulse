@@ -13,10 +13,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.app{
+  margin-left: auto;
+  margin-right: auto;
+  border-color: #ffffff !important;
+  border-width: 50px;
+  border-radius: 50px;
+  height: 50rem;
+  width: 30rem;
+}
 .login{
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 ::placeholder {
@@ -38,7 +46,7 @@ input{
 }
 
 #submit{
-  background-color: rgb(1, 101, 225);
+  background-color: rgb(2, 84, 184);
   color: white;
   padding: 5px;
   margin: 6px;
